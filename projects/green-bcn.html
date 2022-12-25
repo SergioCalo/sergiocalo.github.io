@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+		<title>green-bcn</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="../about.html">About me</a></li>
+							<li><a href="../contact.html">Contact</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Green BCN</h1>
+							<h2>Recommending green routes through the city of Barcelona</h2>
+							<span class="image main"><img src="../images/pic13.jpg" alt="" /></span>
+							<embed src="https://github.com/SergioCalo/sergiocalo.github.io/blob/main/docs/bcn-green-routes.pdf" type="application/pdf" />
+
+							<a href="https://github.com/SergioCalo/sergiocalo.github.io/blob/main/docs/bcn-green-routes.pdf" target="_blank">Link to the paper.</a>
+							<p> Under this framework, a graph that satisfies the Hammersley-Clifford theorem can be modeled as a Markov Random Field (MRF). MRF is a model that belongs to PGM, where where a set of random variables are described by an undirected graph following the Markov property. The joint probability of $X$ given the evidence $Y$ can be factorized over the cliques $C$ of $G$ as: 
+\begin{equation}
+    P(X=x|Y) = \prod_{c \in C} \phi _{c}(x_{c},y_{c})
+\end{equation}
+
+where $x_{c}$ and $y_{c}$ are the variable and evidence nodes in clique $c$, respectively. $\phi _{c}$ is refered as potential of clique $c$, and it is a function that encodes direct statistical interactions between the nodes forming the clique.
+
+The GSR problem is then translated under this framework into a Maximum a Posteriori (MAP) inference problem, where we seek to compute the assignment of $X$ that maximizes the probability $P$ given $Y$.
+
+
+\begin{equation}
+    MAP_{X} = \max _{X} P(X|Y) = \max _{X} \prod_{c \in C} \phi _{c}(x_{c},y_{c})
+\end{equation}
+
+Calculating this quantity is analogous to taking the logarithm of the probability as follows:
+
+
+\begin{equation}
+    MAP_{X} = \max _{X} log(P(X|Y)) = \max _{X} \sum_{c \in C} log(\phi _{c}(x_{c},y_{c}))
+\end{equation}
+
+assumption: Binary cliques. Cliques of size 2 dominate in the graph.
+$$C_{2} >> C_{+}$$
+Being $C_{2}$ the number of size 2 cliques and $C_{+}$ the number of cliques bigger than 2 nodes \end{assumption}
+
+\begin{assumption}[Homophily assumption]\label{as:homophily} Two nodes that are connected in the graph by an edge will tent to have similar node signals. This can also be understood as smoothnes in the graph signal \end{assumption}
+
+At this point, we can define the clique potential $\phi _{c}$. We will do this on an ad hoc basis for our particular problem. Based on assumption \ref{as:binary}, we can define  and \ref{as:homophily}.  
+
+\begin{equation}
+    \phi _{c}(x_{c}) = exp(- \frac{1}{2}(f(x_{i}) -  f(x_{j})))^{2})
+\end{equation}
+
+\begin{equation}
+    MAP_{X} = \max _{X} \sum_{c \in C} log(\phi _{c}(x_{c},y_{c})) =  \max _{X}  \sum_{i,j \in C} -\frac{1}{2}(f(x_{i}) -  f(x_{j})))^{2} = \min _{X} \sum_{i,j \in C} \frac{1}{2}(f(x_{i}) -  f(x_{j})))^{2}
+\end{equation}</p>
+
+						</div>
+					</div>
+
+				
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
